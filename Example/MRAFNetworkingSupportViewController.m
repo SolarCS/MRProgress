@@ -55,6 +55,7 @@
 - (IBAction)onActivityIndicatorGo:(id)sender {
     NSURLSessionDataTask *task = [self.sessionManager GET:@"/delay/3"
                                                parameters:nil
+                                                  headers:nil
                                                  progress:nil
                                                   success:nil
                                                   failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -71,6 +72,7 @@
 - (IBAction)onOverlayViewGo:(id)sender {
     NSURLSessionDataTask *task = [self.sessionManager GET:@"/delay/2"
                                                parameters:nil
+                                                  headers:nil
                                                  progress:nil
                                                   success:nil
                                                   failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -139,6 +141,7 @@
 - (IBAction)onOverlayViewError:(id)sender {
     NSURLSessionDataTask *task = [self.sessionManager GET:@"/status/418"
                                                parameters:nil
+                                                  headers:nil
                                                  progress:nil
                                                   success:nil
                                                   failure:^(NSURLSessionDataTask *task, NSError *error) {

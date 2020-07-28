@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'MRProgress'
-  s.version               = '0.8.3'
+  s.version               = '0.8.4'
   s.summary               = 'Collection of iOS drop-in components to visualize progress by a HUD with different modes'
   s.homepage              = 'https://github.com/mrackwitz/MRProgress'
   s.social_media_url      = 'https://twitter.com/mrackwitz'
@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
   s.license               = 'MIT License'
   s.source                = { :git => 'https://github.com/mrackwitz/MRProgress.git', :tag => s.version.to_s }
   s.source_files          = 'src/MRProgress.h'
-  s.platform              = :ios, '7.0'
+  s.platform              = :ios, '10.0'
   s.requires_arc          = true
   s.default_subspecs      = %w{Blur ActivityIndicator Circular Icons NavigationBarProgress Overlay}
-  
+
   s.subspec 'Blur' do |subs|
     subs.source_files = 'src/Blur/*.{h,m}'
     subs.dependency 'MRProgress/Helper'
@@ -36,13 +36,13 @@ Pod::Spec.new do |s|
     subs.source_files = 'src/Components/MRIconView.{h,m}'
     subs.ios.frameworks = %w{UIKit QuartzCore}
   end
-  
+
   s.subspec 'NavigationBarProgress' do |subs|
     subs.source_files = 'src/Components/MRNavigationBarProgressView.{h,m}'
     subs.dependency 'MRProgress/ProgressBaseClass'
     subs.ios.frameworks = %w{UIKit}
   end
-  
+
   s.subspec 'Overlay' do |subs|
     subs.source_files = 'src/Components/MRProgressOverlayView.{h,m}'
     subs.dependency 'MRProgress/ActivityIndicator'
@@ -52,12 +52,12 @@ Pod::Spec.new do |s|
     subs.dependency 'MRProgress/Helper'
     subs.ios.frameworks = %w{UIKit QuartzCore CoreGraphics}
   end
-  
+
   # Optional support subspecs - you can use them if they make sense for you
   s.subspec 'AFNetworking' do |subs|
     subs.subspec 'Base' do |subs|
       subs.dependency 'MRProgress/MethodCopier'
-      subs.dependency 'AFNetworking', '~> 3.2.1'
+      subs.dependency 'AFNetworking', '~> 4.0.1'
       subs.dependency 'AFNetworking/UIKit'
     end
 
@@ -86,12 +86,12 @@ Pod::Spec.new do |s|
     subs.alias_subspecs 'Circular'              => 'ProgressBaseClass'
     subs.alias_subspecs 'NavigationBarProgress' => 'ProgressBaseClass'
   end
-  
+
   # "Public" helper subspecs - you can rely on these
   s.subspec 'MessageInterceptor' do |subs|
     subs.source_files = 'src/Utils/MRMessageInterceptor.{h,m}'
   end
-  
+
   s.subspec 'MethodCopier' do |subs|
     subs.source_files = 'src/Utils/MRMethodCopier.{h,m}'
   end
@@ -111,7 +111,7 @@ Pod::Spec.new do |s|
     subs.ios.frameworks = %w{UIKit QuartzCore}
     subs.dependency 'MRProgress/Helper'
   end
-  
+
   s.subspec 'Helper' do |subs|
     subs.source_files = 'src/Utils/MRProgressHelper.h'
     subs.ios.frameworks = %w{UIKit QuartzCore}
